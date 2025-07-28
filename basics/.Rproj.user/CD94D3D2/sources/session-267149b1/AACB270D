@@ -3,9 +3,9 @@
     "path": "C:/Users/Pcw/OneDrive/Desktop/R/basics/basic.R",
     "project_path": "basic.R",
     "type": "r_source",
-    "hash": "0",
+    "hash": "446549098",
     "contents": "",
-    "dirty": true,
+    "dirty": false,
     "created": 1753695747359.0,
     "source_on_save": false,
     "relative_order": 2,
@@ -16,12 +16,12 @@
         "cursorPosition": "89,60",
         "scrollLine": "28"
     },
-    "folds": "0|17|26|0|\n27|14|37|0|\n38|22|55|0|\n56|21|60|0|\n61|17|74|0|\n",
+    "folds": "0|17|26|0|\n27|14|37|0|\n38|22|55|0|\n56|21|60|0|\n61|17|74|0|\n76|9|90|0|\n",
     "lastKnownWriteTime": 1753699194,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1753700596000,
+    "last_content_update": 1753700907719,
     "read_only": false,
     "read_only_alternatives": []
 }
