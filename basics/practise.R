@@ -141,12 +141,33 @@
   # Else → 5% discount
   # Return final price after discount
   calc_discount<-function(price){
-    if(price>1000){
-     discountPrice<- (price/100)10
-     return(paste("your discount price is",discountPrice))
-    }else if(price>=500 && price<=1000){
-      discountPrice<-(price/100)10
-      princ
+    discount<-0
+    if (price > 1000) {
+      discount <- price * 0.20
+    } else if (price >= 500 && price <= 1000) {
+      discount <- price * 0.10
+    } else {
+      discount <- price * 0.05
     }
+    
+    discountPrice <- price - discount
+    return(paste("Your discount price is", discountPrice))
   }
+  calc_discount(2000)
+  
+  #Print all numbers between 1 and 30 that are divisible by 3 but not divisible by 5 using a for loop.
+  
+  for (i in 1:30) {
+    # a<-i%%3==0
+    if(i%%3==0){
+      next
+    }
+    print(i)
+  }
+  
+  
+  
+  
+  
+  
   
