@@ -63,13 +63,123 @@ sum(cleanedScores >= 70)
 passing_scores <- scores[!is.na(scores) & scores >= 60]
 print(passing_scores)
 print(class(passing_scores))
+#___________🧠 ADVANCED VECTOR PRACTICE QUESTIONS IN R________----
+  #______Q1. Dynamic Toppers by Subject____----
+students <- c("Ali", "Sara", "John", "Zara", "Amna")
+maths <- c(78, 92, 65, 88, 74)
+science <- c(85, 89, 60, 91, 70)
+# Write a function get_topper(subject_scores) that returns the topper name.
+get_tooper<-function(scores){
+  index <- which.max(scores)
+  return(students[index])
+}
+get_tooper(maths)
+# Return topper in both maths and science.
+get_tooper<-function(a,b){
+  index <- which.max(a)
+  maths<-students[index]
+  index<-which.max(b)
+  science<-students[index]
+  return(paste("math tooper:",maths, "||science tooper: ",science ))
+}
+get_tooper(maths,science)
+# Identify students who scored above 80 in both subjects.
+
+high_maths <- maths > 80
+high_science <- science > 80
+both_high <- high_maths & high_science
+# Get the student names
+top_students <- students[both_high]
+
+print(top_students)
+# Calculate average of both subjects per student and return the top 2 students based on it.
+
+
+
+
+
 #list data structure in r that can hold different data type like String Numbers and even other list and funtion----
 list<-list(
   name="ali",
   score=c(1,2,3),
   age=30
 )
-print(list)
+#Create a Student Profile----
+student<-list(
+  name="hamza",
+  age=22,
+  course=c("match","physics","biology"),
+  gpa=3.6,
+  graduated=FALSE
+)
+#   Print only the courses.
+print(student[3])
+# Add a new field email = "hamza@example.com" to the list.
+student$email="hamza@example.com"
+print(student)
+# Update GPA to 3.8.
+student[4]=3.8
+print(student)
+#________Loop Through a List___----
+employees <- list(
+  emp1 = list(name = "Ali", salary = 45000),
+  emp2 = list(name = "Sara", salary = 52000),
+  emp3 = list(name = "John", salary = 39000)
+)
+# Count how many employees earn more than 40,000.
+d<c()
+count<-0
+for (i in employees) {
+  if(i[salary]>40000){
+    count<-count+1
+  }
+}
+print(count)
+# Loop through and print all employee names.
+for (i in employees) {
+  print(i[1])
+}
+ #________List of Vectors – Scores____----
+scores <- list(
+  Ayesha = c(88, 79, 95),
+  Bilal = c(45, 60, 72),
+  Zain = c(90, 92, 94)
+)
+# Return the name(s) of students whose average is above 85.
+#first find the average
+averages<-sapply(scores,mean)
+top_students <- names(averages[averages > 85])
+print(top_students)
+# Calculate the average score for each student.
+count<-length(scores$Ayesha) #count the element
+ayeshatotal<-sum(scores$Ayesha) #sum the values
+average<-ayeshatotal/count  #find the average
+print(average)
+#other options
+averages <- sapply(scores, mean)
+print(averages)
+
+#_______ ADVANCED LEVEL LIST PRACTICE______-----
+#______Nested Lists - University Data_____
+university <- list(
+  CS = list(
+    dept_head = "Dr. Khan",
+    students = list("Ali", "Sara", "Usman"),
+    subjects = c("AI", "DS", "ML")
+  ),
+  Bio = list(
+    dept_head = "Dr. Hira",
+    students = list("Zainab", "Ahmed"),
+    subjects = c("Genetics", "Botany")
+  )
+)
+# Print all department heads.
+print(university$CS$dept_head)
+print(university$Bio$dept_head)
+# Count total number of students in the university.
+# 
+# Add a new subject "Cyber Security" to CS department.
+
 #matrix data structure store 2 dimensional(row,col) of collection of the same type ----
 # its like a table with rows and col but every element must be the same type
 # nrow and ncol are use to control the size of matrix
