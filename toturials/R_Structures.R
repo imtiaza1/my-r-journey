@@ -70,16 +70,48 @@
    a%in%b
 
 
-# List -----
-
+# __________List -----________-----
 # list is a data structure in R that can hold different data type like --number string vectors even other list or fucntion
 my_list<-list(
-  name:"ali",
-  age:30,
+  name="ali",
+  age=30,
   score=c(80,30,20),
   passed=TRUE
 )
-
+   #access the list
+   my_list[1]
+   print(my_list)
+   # to change this item value
+   my_list[1]="alee"
+   print(my_list)
+   my_list[1]
+   # to find list length()
+   length(my_list)
+   #// check if item exist 
+   my_list%in% "alee"
+   #add item end of the list
+   append(my_list,"heii")
+   #add a new field 
+   my_list$email="hello@hello.com"
+   print(my_list)
+   #remove list item through index
+   new_list<-my_list[-1]
+  print(new_list)
+  # find range of indexes
+  thislist <- list("apple", "banana", "cherry", "orange", "kiwi", "melon", "mango")
+  (thislist)[3:6]
+  # names() used get the keys from list vector and dataframe
+  print(names(my_list))
+  # loop through a list 
+  #for loop print all the item in the list one by one 
+  for (x in thislist) {
+    print(x)
+  }
+  #join two list
+  list1 <- list("a", "b", "c")
+  list2 <- list(1,2,3)
+  list3<-c(list1,list2)
+  print(list3)
 #Matrix
 # matrix is a 2 dimensional (row+column) collection of element of the same type --usually numeric
  #its like a table with rows and column but every element must be the same
