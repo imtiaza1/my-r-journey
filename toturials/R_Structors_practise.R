@@ -169,17 +169,52 @@ university <- list(
   ),
   Bio = list(
     dept_head = "Dr. Hira",
-    students = list("Zainab", "Ahmed"),
+    students = list("Zainab", "Ahmed","alia"),
     subjects = c("Genetics", "Botany")
   )
 )
+# Add a new subject "Cyber Security" to CS department.
+university$CS$subjects <- c(university$CS$subjects, "Cyber Security")
+print(university)
 # Print all department heads.
 print(university$CS$dept_head)
 print(university$Bio$dept_head)
 # Count total number of students in the university.
-# 
-# Add a new subject "Cyber Security" to CS department.
+count1<-length(university$CS$students)
+count2<-length(university$Bio$students)
+totalStudent<-count1+count2
+print(totalStudent)
 
+#_______Filter from List of Lists
+orders <- list(
+  order1 = list(name = "Ali", total = 300, delivered = TRUE),
+  order2 = list(name = "Sara", total = 800, delivered = FALSE),
+  order3 = list(name = "John", total = 150, delivered = FALSE)
+)
+# Print names of customers whose order is not delivered.
+for (i in orders) {
+  if(i$delivered==FALSE){
+    print(i$name)
+  }
+}
+# Find the highest order total and corresponding customer.
+totals<-sapply(orders, function(x) x$total)
+max_total<-max(totals)
+for (i in orders) {
+    if(i$total==max_total){
+      print(paste("Customer:", i$name))
+      print(paste("Total:", i$total))
+    }
+}
+
+#_____Create a Dynamic List with Loop___-----
+  # Write a function that:
+  #Takes number n as input.
+  # Returns a list of n elements, where each element is a list with fields:
+  #id, square, is_even
+fook<-function(n){
+  
+}
 #matrix data structure store 2 dimensional(row,col) of collection of the same type ----
 # its like a table with rows and col but every element must be the same type
 # nrow and ncol are use to control the size of matrix
