@@ -98,7 +98,7 @@ print(top_students)
 
 
 
-#list data structure in r that can hold different data type like String Numbers and even other list and funtion----
+#list data structure in r that can hold different data type like String Numbers and even other list and function----
 list<-list(
   name="ali",
   score=c(1,2,3),
@@ -160,7 +160,7 @@ averages <- sapply(scores, mean)
 print(averages)
 
 #_______ ADVANCED LEVEL LIST PRACTICE______-----
-#______Nested Lists - University Data_____
+#______Nested Lists - University Data_____----
 university <- list(
   CS = list(
     dept_head = "Dr. Khan",
@@ -208,23 +208,31 @@ for (i in orders) {
 }
 
 #_____Create a Dynamic List with Loop___-----
-  # Write a function that:
-  #Takes number n as input.
-  # Returns a list of n elements, where each element is a list with fields:
-  #id, square, is_even
-fook<-function(n){
-  
-}
+
 #matrix data structure store 2 dimensional(row,col) of collection of the same type ----
 # its like a table with rows and col but every element must be the same type
 # nrow and ncol are use to control the size of matrix
 m<-matrix(1:6,nrow = 2,ncol = 3)
 
-
-#an array is like matrix have more than 2 dimensional data of element of the same type in multi dimension-----
+o<-matrix(c(1,2,3,4,5,6),nrow = 2,ncol = 3)
+print(length(m))
+print(rev(m))
+print(m%in%3)
+append(m,3)
+print(m[7],4)
+print(o)
+print(o[1,3])
+n<-matrix(c(7,8,9,0,6,6,8,7),nrow = 2,ncol = 4)
+print(unique(n))
+join<-c(m,n)
+print(join)
+print(class(m))
+#an array is like matrix have more than 2 dimensional data of element of the same type in Multi dimension-----
 # a array with one dimension values
 anarray<-c(1:4)
-
+data<-c(1,2,3,4,5,5,6,6,6,6)
+data[7,2]
+print()
 
 # an array with more two dimensional values----
 multiarray<- array(
@@ -237,3 +245,10 @@ data<-data.frame(
   country=c("karachi","gb"),
   score=c(100,20)
 )
+
+
+
+
+
+
+

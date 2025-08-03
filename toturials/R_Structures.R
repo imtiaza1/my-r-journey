@@ -112,14 +112,26 @@ my_list<-list(
   list2 <- list(1,2,3)
   list3<-c(list1,list2)
   print(list3)
-#Matrix
+#________Matrix______------
 # matrix is a 2 dimensional (row+column) collection of element of the same type --usually numeric
  #its like a table with rows and column but every element must be the same
-m<-matrix(1:6,nrow=2,ncol=3)
-print(m)
-#use nrow and ncol to control the size of the matrix
-
-
+m<-matrix(1:6,nrow=2,ncol=3)  #use nrow and ncol to control the size of the matrix
+  #access matrix item using []. the first no 1 in the [] specifies the row-position
+    # and the 2nd 2 no in the [] specifies the column-position
+  print(m)
+  m[1,2]
+  # To access a whole row in a matrix, use a comma (,) after specifying the row number inside square brackets []
+  m[2,]
+  
+  # To access a whole column, use a comma before specifying the column number
+  m[,2]
+  
+  # To access more than one row, use the c() function
+  m[c(2),]  # or m[c(2, 3),] for multiple rows
+  
+  # To access more than one column, use the c() function as well
+  m[,c(2)]  # or m[,c(1, 3)] for multiple columns
+  
 #Array----
 # an array is like a matrix but can have more than two dimensions its store element of the same type in multiple dimension
 # an array with one dimension with values ranging from 1 to 24
