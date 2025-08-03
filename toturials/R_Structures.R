@@ -100,7 +100,7 @@ my_list<-list(
   # find range of indexes
   thislist <- list("apple", "banana", "cherry", "orange", "kiwi", "melon", "mango")
   (thislist)[3:6]
-  # names() used get the keys from list vector and dataframe
+  # names() used get the keys from list vector and data frame
   print(names(my_list))
   # loop through a list 
   #for loop print all the item in the list one by one 
@@ -117,7 +117,7 @@ my_list<-list(
  #its like a table with rows and column but every element must be the same
 m<-matrix(1:6,nrow=2,ncol=3)
 print(m)
-#use nrow and ncol to control the size of the matrixs
+#use nrow and ncol to control the size of the matrix
 
 
 #Array----
