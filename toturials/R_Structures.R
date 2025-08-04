@@ -132,6 +132,49 @@ m<-matrix(1:6,nrow=2,ncol=3)  #use nrow and ncol to control the size of the matr
   # To access more than one column, use the c() function as well
   m[,c(2)]  # or m[,c(1, 3)] for multiple columns
   
+  #add rows and column
+  # use cbind() function to add additional column in a matrix
+  thismatrix <- matrix(c("apple", "banana", "cherry", "orange","grape", "pineapple", "pear", "melon", "fig"), nrow = 3, ncol = 3)
+  newmatrix <- cbind(thismatrix, c("strawberry", "blueberry", "raspberry"))
+  print(newmatrix)
+  
+  # note the cell in new column must be the same length as existing column
+  
+  # use rbind() func to add row in a matrix
+  thismatrix <- matrix(c("apple", "banana", "cherry", "orange","grape", "pineapple", "pear", "melon", "fig"), nrow = 3, ncol = 3)
+  
+  newmatrix <- rbind(thismatrix, c("strawberry", "blueberry", "raspberry"))
+  
+  # removes rows and column 
+  #c() to remove rows and column in a matrix
+  thismatrix <- matrix(c("apple", "banana", "cherry", "orange", "mango", "pineapple"), nrow = 3, ncol =2)
+  
+  thismatrix<-thismatrix[-c(1),-c(1)]
+  print(thismatrix)
+  
+  #check if item exist
+  thismatrix <- matrix(c("apple", "banana", "cherry", "orange"), nrow = 2, ncol = 2)
+  "apple"%in%thismatrix
+  
+  #dim() use to find the number of rows and column in a matrix
+  dim(thismatrix)
+  
+  #loops thro matrix
+  for (i in thismatrix) {
+    print(i)
+  }
+  
+  #use rebind() and cbind() func to two are more matrix in rows and column
+  Matrix1 <- matrix(c("apple", "banana", "cherry", "grape"), nrow = 2, ncol = 2)
+  Matrix2 <- matrix(c("orange", "mango", "pineapple", "watermelon"), nrow = 2, ncol = 2)
+  # Adding it as a rows
+  Matrix_Combined <- rbind(Matrix1, Matrix2)
+  Matrix_Combined
+  
+  # Adding it as a columns
+  Matrix_Combined <- cbind(Matrix1, Matrix2)
+  Matrix_Combined
+  
 #Array----
 # an array is like a matrix but can have more than two dimensions its store element of the same type in multiple dimension
 # an array with one dimension with values ranging from 1 to 24

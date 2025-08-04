@@ -214,19 +214,45 @@ for (i in orders) {
 # nrow and ncol are use to control the size of matrix
 m<-matrix(1:6,nrow = 2,ncol = 3)
 
-o<-matrix(c(1,2,3,4,5,6),nrow = 2,ncol = 3)
-print(length(m))
-print(rev(m))
-print(m%in%3)
-append(m,3)
-print(m[7],4)
-print(o)
-print(o[1,3])
-n<-matrix(c(7,8,9,0,6,6,8,7),nrow = 2,ncol = 4)
-print(unique(n))
-join<-c(m,n)
-print(join)
-print(class(m))
+# Transpose & Diagonal Matrix Operations
+# 👉 Task:
+#   Create a 3x3 matrix with any numbers.
+a<-matrix(1:9,nrow = 3,ncol = 3)
+# Print the transpose of that matrix (i.e., rows become columns).
+print(t(a))
+# Extract and print the diagonal values.
+print(diag(a))
+# Replace all diagonal values with 0 and print the new matrix.
+m<-`diag<-`(a,0)
+print(m)
+
+# _______Row and Column Sums
+# 👉 Task:
+#   Create a 4x4 matrix filled with random numbers between 10 to 100.
+no<-matrix(c(1:16),nrow = 4,ncol = 4)
+# Calculate the sum of each row and each column.
+ #calculate column each 
+  print(paste("column 1 calculation",sum(no[,c(1)])))
+  print(paste("column 2 calculation",sum(no[,c(2)])))
+  print(paste("column 3 calculation",sum(no[,c(3)])))
+  print(paste("column 4 calculation",sum(no[,c(4)])))
+ #calculate each row
+  print(paste("row 1 calculation",sum(no[c(1),])))
+  print(paste("row 2 calculation",sum(no[c(2),])))
+  print(paste("row 3 calculation",sum(no[c(3),])))
+  print(paste("row 4 calculation",sum(no[c(4),])))
+  #even shorter it r built in function
+  print(colSums(no))
+  
+# Calculate the average (mean) of each row and each column.
+
+# Identify which row has the highest sum.
+
+
+
+
+
+
 #an array is like matrix have more than 2 dimensional data of element of the same type in Multi dimension-----
 # a array with one dimension values
 anarray<-c(1:4)
