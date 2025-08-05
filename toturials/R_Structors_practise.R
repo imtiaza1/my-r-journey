@@ -245,36 +245,42 @@ no<-matrix(c(1:16),nrow = 4,ncol = 4)
   print(colSums(no))
   
 # Calculate the average (mean) of each row and each column.
-
+  print(mean(no))
 # Identify which row has the highest sum.
-
-
-
-
-
-
-#an array is like matrix have more than 2 dimensional data of element of the same type in Multi dimension-----
-# a array with one dimension values
-anarray<-c(1:4)
-data<-c(1,2,3,4,5,5,6,6,6,6)
-data[7,2]
-print()
-
-# an array with more two dimensional values----
-multiarray<- array(
-  anarray,dim = c(1,2,3)
-)
-# data frame is like a table with spreadsheet its can hold different data type of element fo across multiple column
-data<-data.frame(
-  name=c("junain","ali"),
-  age=c(10,20),
-  country=c("karachi","gb"),
-  score=c(100,20)
-)
-
-
-
-
-
-
-
+  x<-rowSums(no)
+  print(x)
+  b<-which.max(x)
+  print(b)
+  # _________Filter Values in Matrix
+  # 👉 Task:
+  #   Create a 3x5 matrix with values from 1 to 100.
+  xx<-matrix(1:100, nrow = 10, ncol = 10)
+  #   Print all the values greater than 50.
+  print(xx[xx>50])
+  # Replace all even numbers with the word "Even".
+  cc<-as.character(xx)
+  cc[as.numeric(cc)%%2==0]<-"even"
+  print(cc)
+  # Replace all odd numbers with the word "Odd".
+  cc<- as.character(xx) #convert numeric to String
+  cc[as.numeric(cc) %% 2 ==1]<-"odd"
+  print(cc)
+  
+  #______ADVANCED LEVEL QUESTION – Dynamic Matrix with a Function____----
+  # Write a function called generate_matrix(n) that:
+  # Takes a number n as input.
+  # Returns an n x n matrix.
+  # Each element should be the product of its row and column index.
+  generate_matrix<-function(n){
+    mat<-matrix(nrow = n,ncol = n)
+    for (i in 1:n) {
+      for (j in 1:n) {
+        mat[i,j]<-i*j
+      }
+    }
+    return(mat)
+  }
+  generate_matrix(5)
+ 
+  
+  

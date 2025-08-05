@@ -175,6 +175,8 @@ m<-matrix(1:6,nrow=2,ncol=3)  #use nrow and ncol to control the size of the matr
   Matrix_Combined <- cbind(Matrix1, Matrix2)
   Matrix_Combined
   
+  
+  
 #Array----
 # an array is like a matrix but can have more than two dimensions its store element of the same type in multiple dimension
 # an array with one dimension with values ranging from 1 to 24
@@ -184,6 +186,18 @@ print(thisarray)
 multiarray<-array(thisarray,dim = c(1,2,3))
 print(multiarray)
 # array are usefull for working 3d or higher dimensional data
+ #access array item
+print(thisarray[1])
+#use c() to acces whole row and column
+print(multiarray[c(1),,])
+print(multiarray[,,c(2)])
+
+#checck if an items exist in an array
+print(3%in%multiarray)
+#use dim() to find amount of rown and column in array
+c<-array(c(1:4))
+cc<-array(c,dim = c(1,2,3))
+print(cc)
 #data frames-----
 # data frames is like a table in a spreadsheet it can hold different type of data across multiple column
 sf<-data.frame(
