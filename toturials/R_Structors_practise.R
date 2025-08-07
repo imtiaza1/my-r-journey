@@ -281,6 +281,42 @@ no<-matrix(c(1:16),nrow = 4,ncol = 4)
     return(mat)
   }
   generate_matrix(5)
- 
+ # practise factor
+  employees_df <- data.frame(
+    name = c("Ali", "Sara", "Ahmed", "Zara", "Bilal", "Kiran", "Usman"),
+    gender = c("Male", "Female", "Male", "Female", "Male", "Female", "Male"),
+    department = c("IT", "HR", "Finance", "HR", "IT", "Finance", "HR"),
+    education = c("Graduate", "Inter", "Matric", "Graduate", "Inter", "Graduate", "Matric"),
+    experience_years = c(5, 2, 1, 4, 3, 6, 2),
+    salary = c(70000, 50000, 40000, 65000, 55000, 75000, 48000)
+  )
+  # 🔰 BASIC TASKS
+  # ✅ Convert gender, department, and education columns into factors.
+  employees_df$gender <- as.factor(employees_df$gender)
+  employees_df$department <- as.factor(employees_df$department)
+  employees_df$education <- as.factor(employees_df$education)
+  
+  # ✅ Check levels of each factor.
+  levels(employees_df$gender)
+  levels(employees_df$department)
+  levels(employees_df$education)
+  # ✅ Count how many employees are in each department using summary().
+  summary(employees_df$department)
+  
+  # ⚙️ INTERMEDIATE TASKS
+  # ✅ Make education an ordered factor:
+  #   "Matric" < "Inter" < "Graduate"
+  # 
+  # ✅ Use relevel() to make "Graduate" the reference level.
+  # 
+  # ✅ Filter employees who are in "HR" department and are "Female".
+  # 
+  # 🧠 ADVANCED TASKS (Used in Analysis/ML)
+  # ✅ Group employees by department and calculate average salary per department.
+  # 
+  # ✅ Plot a bar chart of number of employees per education level
+  # (use ggplot2 or barplot()).
+  # 
+  # ✅ Convert the education factor to numeric based on order and add a new column edu_level_score.
   
   

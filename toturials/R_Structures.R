@@ -206,3 +206,26 @@ sf<-data.frame(
   passed=c(TRUE,TRUE,FALSE)
 )
 print(sf)
+
+#__________factor_______----
+#factor are use to categorize data 
+ #create factor
+music_genre <- factor(c("Jazz", "Rock", "Classic", "Classic", "Pop", "Jazz", "Rock", "Jazz"))
+music_genre
+
+#to print level use level()
+levels(music_genre)
+
+#length
+length(music_genre)
+
+#access
+music_genre[2]
+
+#change value
+music_genre[3]<-"sui"
+music_genre
+
+#clean factor 
+ll<-na.omit(music_genre)
+print(ll)
