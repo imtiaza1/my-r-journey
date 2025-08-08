@@ -306,17 +306,40 @@ no<-matrix(c(1:16),nrow = 4,ncol = 4)
   # ⚙️ INTERMEDIATE TASKS
   # ✅ Make education an ordered factor:
   #   "Matric" < "Inter" < "Graduate"
-  # 
+  employees_df$education<-factor(
+    employees_df$education,
+    levels = c("Matric", "Inter", "Graduate"),
+    ordered = TRUE
+  )
+  View(employees_df$education)
   # ✅ Use relevel() to make "Graduate" the reference level.
-  # 
+  employees_df$education<-factor(
+    employees_df$education,
+    ordered = FALSE
+  )
+  employees_df$education <- relevel(employees_df$education, ref = "Graduate")
+  employees_df
   # ✅ Filter employees who are in "HR" department and are "Female".
-  # 
+  employees_df%>%
+    filter(department=="HR" & gender=="Female")
+  #with out using dplyr--
+  employees_df[employees_df$department == "HR"& employees_df$gender == "Female", ]
+  
   # 🧠 ADVANCED TASKS (Used in Analysis/ML)
   # ✅ Group employees by department and calculate average salary per department.
-  # 
-  # ✅ Plot a bar chart of number of employees per education level
-  # (use ggplot2 or barplot()).
-  # 
-  # ✅ Convert the education factor to numeric based on order and add a new column edu_level_score.
+  employees_df%>%
+    group_by(department)%>%
+    summarise(average_salary=mean(salary))
+  
+  # ✅ Convert the education factor to numeric based on o
+                        # -rder and add a new column edu_level_score.
+  employees_df$education <- factor(
+    employees_df$education,
+    levels = c("Matric", "Inter", "Graduate"),
+    ordered = TRUE
+  )
+  employees_df$edu_level_score<-as.numeric(employees_df$education)
+  table(employees_df)
+  View(employees_df)
   
   
